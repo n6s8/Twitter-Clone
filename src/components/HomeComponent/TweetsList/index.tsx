@@ -1,63 +1,24 @@
-import React, { useState } from "react";
-import { KZ_IMG_PATH, NFACTORIAL_IMG_PATH } from "../images";
+import { useState } from "react";
 import Tweet from "./Tweet.tsx";
 
-export default function TweetsList() {
-    const allTweets = [
-        {
-            authorName: "Free KZ today",
-            authorUsername: "@kz",
-            img: KZ_IMG_PATH,
-            content: 'Youth won GOLD MEDALS FROM IOI and IMO',
-            replies: 200,
-            retweets: 1000,
-            likes: 500,
-        },
-        {
-            authorName: "nFactorial",
-            authorUsername: "@nfactorial",
-            img: NFACTORIAL_IMG_PATH,
-            content: 'Data analytics course starts today',
-            replies: 1000,
-            retweets: 2000,
-            likes: 5000,
-        },
-        {
-            authorName: "nFactorial",
-            authorUsername: "@nfactorial",
-            img: NFACTORIAL_IMG_PATH,
-            content: 'Black friday! Успей купить все курсы!',
-            replies: 1000,
-            retweets: 2000,
-            likes: 5000,
-        },
-    ];
+export default function TweetsList({ tweets }) {
+    const [text, UpdateText] = useState("");
 
-    const [text, FixText] = useState("");
-    const [filteredTweets, FilteredTweets] = useState(allTweets);
-
-    const ChangeDetect = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const input = e.target.value.toLowerCase();
-
-        FixText(input);
-
-        const filtered = allTweets.filter(
-            (tweet) =>
-                tweet.authorName.toLowerCase().includes(input) ||
-                tweet.authorUsername.toLowerCase().includes(input) ||
-                tweet.content.toLowerCase().includes(input)
-        );
-
-        FilteredTweets(filtered);
-    };
+    const filteredTweets = tweets.filter(
+        (tweet) =>
+            tweet.authorName.toLowerCase().includes(text.toLowerCase()) ||
+            tweet.authorUsername.toLowerCase().includes(text.toLowerCase()) ||
+            tweet.content.toLowerCase().includes(text.toLowerCase())
+    );
 
     return (
         <div>
+
             <input
                 type="text"
                 placeholder="Search tweets..."
                 value={text}
-                onChange={ChangeDetect}
+                onChange={(e) => UpdateText(e.target.value)}
                 style={{
                     width: "400px",
                     padding: "10px",

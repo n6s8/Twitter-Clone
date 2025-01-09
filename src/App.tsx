@@ -3,7 +3,7 @@ import SideMenu from "./components/SideMenuComponent";
 import Home from "./components/HomeComponent";
 import Recommendation from "./components/Recommendation";
 
-function App() {
+export default function App() {
 
   return (
     <>
@@ -18,4 +18,3 @@ function App() {
   )
 }
 
-export default App
