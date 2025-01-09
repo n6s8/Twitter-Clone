@@ -1,0 +1,27 @@
+.info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-left: 50px;
+}
+.block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+.rec{
+    margin-left: 63px;
+}

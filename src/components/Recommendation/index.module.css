@@ -1,0 +1,7 @@
+.Rec {
+    padding: 20px;
+    width: 373px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

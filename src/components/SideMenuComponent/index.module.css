@@ -1,0 +1,25 @@
+.SideMenu{
+    width: 25%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.logoIcon{
+    width: 28px;
+    height: 28px;
+}
+.User{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.icon{
+    width: 28px;
+    height: 28px;
+}
+.UserIcon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
