@@ -15,6 +15,7 @@ export default function Home() {
             replies: 200,
             retweets: 1000,
             likes: 500,
+            category: "Politics",
         },
         {
             authorName: "nFactorial",
@@ -24,6 +25,7 @@ export default function Home() {
             replies: 1000,
             retweets: 2000,
             likes: 5000,
+            category: "Education",
         },
         {
             authorName: "nFactorial",
@@ -33,10 +35,11 @@ export default function Home() {
             replies: 1000,
             retweets: 2000,
             likes: 5000,
+            category: "Education",
         },
     ]);
 
-    const addNewTweet = (newTweet: { authorName: string; authorUsername: string; img: string; content: string; replies: number; retweets: number; likes: number; })  => {
+    const addNewTweet = (newTweet: { authorName: string; authorUsername: string; img: string; content: string; replies: number; retweets: number; likes: number; category: string;})  => {
         UpdateTweets((prevTweets) => [newTweet, ...prevTweets]);
     };
 

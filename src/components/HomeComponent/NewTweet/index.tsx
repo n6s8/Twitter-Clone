@@ -10,6 +10,7 @@ interface Tweet {
     replies: number;
     retweets: number;
     likes: number;
+    category: string;
 }
 
 interface NewTweetProps {
@@ -28,6 +29,7 @@ export default function NewTweet({ addTweet }: NewTweetProps) {
             replies: 900,
             retweets: 400,
             likes: 500,
+            category: "Personal",
         };
 
         addTweet(newTweet);

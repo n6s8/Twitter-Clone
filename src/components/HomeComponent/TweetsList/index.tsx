@@ -5,6 +5,7 @@ interface Tweet {
     authorName: string;
     authorUsername: string;
     content: string;
+    category: string;
 }
 
 interface TweetsListProps {
@@ -13,12 +14,14 @@ interface TweetsListProps {
 
 export default function TweetsList({ tweets }: TweetsListProps) {
     const [text, UpdateText] = useState("");
+    const [variant, Setvariant] = useState("");
 
     const filteredTweets = tweets.filter(
         (tweet: Tweet) =>
-            tweet.authorName.toLowerCase().includes(text.toLowerCase()) ||
-            tweet.authorUsername.toLowerCase().includes(text.toLowerCase()) ||
-            tweet.content.toLowerCase().includes(text.toLowerCase())
+            (tweet.authorName.toLowerCase().includes(text.toLowerCase()) ||
+                tweet.authorUsername.toLowerCase().includes(text.toLowerCase()) ||
+                tweet.content.toLowerCase().includes(text.toLowerCase())) &&
+            (variant === "" || tweet.category === variant)
     );
 
     return (
@@ -37,6 +40,13 @@ export default function TweetsList({ tweets }: TweetsListProps) {
                     fontSize: "16px",
                 }}
             />
+
+            <select value={variant} onChange={(e) => Setvariant(e.target.value)}>
+                <option value="">All</option>
+                <option>Education</option>
+                <option>Politics</option>
+                <option>Personal</option>
+            </select>
 
             {filteredTweets.map((tweet, index: Key | null | undefined) => (
                 <Tweet img={""} replies={0} retweets={0} likes={0} {...tweet} key={index} />
