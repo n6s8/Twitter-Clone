@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { Key, useState } from "react";
 import Tweet from "./Tweet.tsx";
 
-export default function TweetsList({ tweets }) {
+interface Tweet {
+    authorName: string;
+    authorUsername: string;
+    content: string;
+}
+
+interface TweetsListProps {
+    tweets: Tweet[];
+}
+
+export default function TweetsList({ tweets }: TweetsListProps) {
     const [text, UpdateText] = useState("");
 
     const filteredTweets = tweets.filter(
-        (tweet) =>
+        (tweet: Tweet) =>
             tweet.authorName.toLowerCase().includes(text.toLowerCase()) ||
             tweet.authorUsername.toLowerCase().includes(text.toLowerCase()) ||
             tweet.content.toLowerCase().includes(text.toLowerCase())
@@ -13,7 +23,6 @@ export default function TweetsList({ tweets }) {
 
     return (
         <div>
-
             <input
                 type="text"
                 placeholder="Search tweets..."
@@ -29,8 +38,8 @@ export default function TweetsList({ tweets }) {
                 }}
             />
 
-            {filteredTweets.map((tweet, index) => (
-                <Tweet {...tweet} key={index} />
+            {filteredTweets.map((tweet, index: Key | null | undefined) => (
+                <Tweet img={""} replies={0} retweets={0} likes={0} {...tweet} key={index} />
             ))}
         </div>
     );

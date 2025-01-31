@@ -1,12 +1,26 @@
 import { useState } from "react";
-import  PROFILE_IMG_PATH  from "../images/profilePhoto.jpeg";
+import PROFILE_IMG_PATH from "../images/profilePhoto.jpeg";
 import styles from './index.module.css';
 
-export default function NewTweet({ addTweet }) {
+interface Tweet {
+    authorName: string;
+    authorUsername: string;
+    img: string;
+    content: string;
+    replies: number;
+    retweets: number;
+    likes: number;
+}
+
+interface NewTweetProps {
+    addTweet: (tweet: Tweet) => void;
+}
+
+export default function NewTweet({ addTweet }: NewTweetProps) {
     const [tweetContent, ChangedContent] = useState("");
 
     const Submit = () => {
-        const newTweet = {
+        const newTweet: Tweet = {
             authorName: "Nurzhan Sultanov",
             authorUsername: "@n6s8",
             img: PROFILE_IMG_PATH,
