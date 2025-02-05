@@ -1,0 +1,63 @@
+.Content{
+    background-color: #f5f8fa;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 10px;
+}
+.Header{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    justify-content: space-between;
+    align-content: center;
+}
+.Icon{
+    width: 28px;
+    height: 28px;
+}
+.Image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.showMore {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1da1f2;
+    text-align: center;
+}
+.Text{
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.Text1{
+    font-size: 14px;
+    color: grey;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.Text2{
+    font-size: 14px;
+    color: grey;
+    font-weight: normal;
+    margin: 5px;
+    padding: 0;
+}
+.Blog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}

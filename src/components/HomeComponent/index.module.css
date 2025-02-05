@@ -1,0 +1,18 @@
+.MainPart {
+    padding: 20px;
+}
+select{
+    width: 120px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+
+    padding: 10px;
+
+    margin-bottom: 10px;
+}
